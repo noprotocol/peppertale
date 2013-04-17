@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('peppertaleApp', [])
+angular.module('peppertaleApp', ['ui'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/tasks.html',
+        controller: 'TasksCtrl'
       })
       .otherwise({
         redirectTo: '/'

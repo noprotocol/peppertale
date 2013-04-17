@@ -94,7 +94,7 @@ module.exports = function (grunt) {
         javascriptsDir: 'js',
         fontsDir: 'fonts',
         importPath: 'webroot/components',
-        relativeAssets: true
+        // relativeAssets: true
       },
       dist: {},
       server: {
