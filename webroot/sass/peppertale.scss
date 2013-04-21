@@ -26,3 +26,10 @@ body {
 	height: 52px;
 	margin: 0 0 15px 0;
 }
+.tasks {
+	@extend .table;
+	@extend .table-striped;
+	@extend .table-condensed;
+
+	width: auto;
+}

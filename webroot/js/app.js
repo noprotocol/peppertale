@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('peppertaleApp', ['ui'])
+var app = angular.module('peppertaleApp', ['ui' , 'ngResource'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
