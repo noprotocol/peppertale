@@ -1,4 +1,4 @@
-Peppertale Z
+# Peppertale Z
 
 ## Installation
 

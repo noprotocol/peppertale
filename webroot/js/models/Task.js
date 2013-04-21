@@ -26,7 +26,20 @@ app.factory('Task', function ($resource) {
 	});
 	// static methods
 	angular.extend(Task, {
-		estimateInHours: function (tasks) {
+
+		/**
+		 * Get the total estimated hours for the given tasks.
+		 *
+		 * @param {Array<Task>} tasks
+		 * @return {Number} in hours
+		 */
+		totalEstimated: function (tasks) {
+			var sum = 0;
+			tasks.forEach(function (task) {
+				sum += task.estimateInHours();
+			});
+			return sum;
+		}
 	});
 	return Task;
 });
