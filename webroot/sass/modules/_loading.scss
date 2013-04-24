@@ -1,0 +1,37 @@
+.loading {
+	text-align: center;
+	width: 200px;
+	margin: 100px auto 0 auto;
+
+	b { // ball
+		display: inline-block;
+		vertical-align: middle;
+		width: 24px;
+		height: 24px;
+		margin: 25px 2px;
+		background: transparent;
+		border-radius: 50px;
+		@include experimental(animation, loading 1s infinite alternate);
+
+		&:nth-child(1) {
+			@include experimental(animation-delay, 0s);
+		}
+		&:nth-child(2) {
+			@include experimental(animation-delay, 0.33s);
+		}
+		&:nth-child(3) {
+			@include experimental(animation-delay, 0.66s);
+		}
+	}
+}
+
+@include keyframes(loading) {
+	0% {
+		background-color: $brandColor;
+		@include transform(scale(0.5), translateY(0));
+	}
+	100% {
+		background-color: transparent;
+		@include transform(scale(1), translateY(-10px));
+	}
+}
