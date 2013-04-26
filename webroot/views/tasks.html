@@ -1,3 +1,4 @@
+
 <table class="tasks">
 	<thead>
 		<tr>
@@ -9,14 +10,13 @@
 	<tbody ui-sortable ="{axis:'y', stop: sortStopped}" ng-model="tasks">
 		<tr class="task" ng-repeat="task in tasks" ng-controller="TaskCtrl">
 			<td>#{{task.sortorder}}</td>
-			<td><input ng-model="task.title" /></td>
-			<td><input ng-model="task.estimate" class="input-small" /></td>
+			<td><input ng-model="task.title" type="text" /></td>
+			<td><input ng-model="task.estimate" class="input-small" type="number"/></td>
 		</tr>
 	</tbody>
 </table>
 
 
 Total estimated: {{ sum() }} hours <br />
-<a class="btn" ng-click="addTask()">Add task</a>
 
 <burndown-chart ng-model="chartData" style="width: 640px; height:400px"/>
