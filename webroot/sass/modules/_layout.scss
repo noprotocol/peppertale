@@ -13,8 +13,8 @@ html {
 body {
 	background-color: transparent;
 	@include background-image(radial-gradient(center, ellipse,  rgba(0,0,0,0) 30%, rgba(0,0,0,0.4) 100%));
-	height: 100%;
-
+	background-attachment: fixed;
+	min-height: 100%;
 }
 .page {
 	width: 960px;
@@ -22,11 +22,13 @@ body {
 	background: white;
 	margin: 0 auto;
 	padding: 20px 30px;
+	border-radius: 6px;
 
 }
 .logo {
 	background: image-url('logo.png') no-repeat;
 	color: transparent;
+	width: 220px;
 	height: 52px;
-	margin: 0 0 15px 0;
+	margin: 5px auto 2px auto;
 }

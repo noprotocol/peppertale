@@ -1,8 +1,18 @@
-app.factory('Task', function ($resource) {
-	var Task = $resource(WEBROOT + 'api/tasks/:id', {id: '@id'}, {update: { method: 'PUT'}});
+app.factory('Task', function (ngRecord) {
 
-	// instance methods
-	angular.extend(Task.prototype, {
+	return ngRecord.extend({
+
+		urlRoot: WEBROOT + 'api/tasks',
+
+		defaults: {
+			title: '',
+			estimate: ''
+		},
+
+		constructor: function Task(properties) {
+			this.initialize.apply(this, arguments)
+		},
+
 		/**
 		 * Return the estimate in hours
 		 * @return {Number}
@@ -14,32 +24,6 @@ app.factory('Task', function ($resource) {
 			}
 			return value;
 		},
-		save: function (values) {
-			if (values) {
-				angular.extend(this, values);
-			}
-			if (this.id) {
-				return this.$update();
-			}
-			return this.$save();
-		}
-	});
-	// static methods
-	angular.extend(Task, {
 
-		/**
-		 * Get the total estimated hours for the given tasks.
-		 *
-		 * @param {Array<Task>} tasks
-		 * @return {Number} in hours
-		 */
-		totalEstimated: function (tasks) {
-			var sum = 0;
-			tasks.forEach(function (task) {
-				sum += task.estimateInHours();
-			});
-			return sum;
-		}
 	});
-	return Task;
 });

@@ -1,12 +1,11 @@
 {
   "name": "peppertale",
-  "version": "0.0.0",
+  "version": "2.0.0",
   "dependencies": {
     "angular": "~1.0.5",
     "json3": "~3.2.4",
     "es5-shim": "~2.0.8",
     "angular-ui": "~0.4.0",
-    "Breeze": "git://github.com/IdeaBlade/Breeze.git#~1.3.0"
   },
   "devDependencies": {
     "angular-mocks": "~1.0.5",

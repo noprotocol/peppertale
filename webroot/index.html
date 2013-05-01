@@ -14,8 +14,9 @@
     <!--[if lt IE 8]>
       <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
     <![endif]-->
+    <div class="logo">Peppertale</div>
+
     <div class="page">
-      <div class="logo">Peppertale</div>
       <div ng-view>
         <div class="loading"><b></b><b></b><b></b></div>
       </div>
@@ -42,9 +43,11 @@
 
     <!-- build:js scripts/scripts.js -->
     <script src="js/app.js"></script>
+    <script src="js/angular-record.js"></script>
     <script src="js/models/Task.js"></script>
+    <script src="js/models/Project.js"></script>
     <script src="js/controllers/TaskCtrl.js"></script>
-    <script src="js/controllers/TasksCtrl.js"></script>
+    <script src="js/controllers/ProjectCtrl.js"></script>
     <script src="js/directives/burndown-chart.js"></script>
     <!-- endbuild -->
 

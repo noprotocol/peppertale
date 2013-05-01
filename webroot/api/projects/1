@@ -1,0 +1,19 @@
+{
+	"id": 1,
+	"title": "Project 1",
+	"tasks": [{
+		"id": 1,
+		"title": "First task",
+		"estimate": 4,
+		"sortorder": 8
+	}, {
+		"id": 2,
+		"title": "Second task",
+		"estimate": 2,
+		"sortorder": 4
+	}],
+	"timeline":[{
+		"date": "2013-05-01",
+		"planned": 7
+	}]
+}

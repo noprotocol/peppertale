@@ -1,0 +1,21 @@
+
+<table class="tasks">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Task</th>
+			<th>Estimate</th>
+		</tr>
+	<thead>
+	<tbody ui-sortable ="{axis:'y'}" ng-model="project.tasks">
+		<tr class="task" ng-repeat="task in project.tasks" ng-controller="TaskCtrl">
+			<td>#{{task.sortorder}}</td>
+			<td><input ng-model="task.title" type="text" /></td>
+			<td><input ng-model="task.estimate" class="input-small" type="number"/></td>
+		</tr>
+	</tbody>
+</table>
+
+Total estimated: {{estimated}} hours <br />
+
+<burndown-chart ng-model="chartData" style="width: 640px; height:400px"/>
