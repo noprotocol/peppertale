@@ -1,16 +1,21 @@
-app.factory('Task', function (ngRecord) {
+app.factory('Task', function (ActiveRecord) {
+	'use strict';
 
-	return ngRecord.extend({
+	return ActiveRecord.extend({
 
-		urlRoot: WEBROOT + 'api/tasks',
+		$urlRoot: WEBROOT + 'api/tasks',
 
-		defaults: {
+		$defaults: {
 			title: '',
 			estimate: ''
 		},
 
-		constructor: function Task(properties) {
-			this.initialize.apply(this, arguments)
+		/**
+		 * @contructor
+		 * @param {Object} properties
+		 */
+		$constructor: function Task(properties) {
+			this.$initialize.apply(this, arguments);
 		},
 
 		/**
@@ -23,7 +28,7 @@ app.factory('Task', function (ngRecord) {
 				return 0.0;
 			}
 			return value;
-		},
+		}
 
 	});
 });

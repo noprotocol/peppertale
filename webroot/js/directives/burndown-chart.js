@@ -1,4 +1,6 @@
-app.directive('burndownChart', function ($parse) {
+app.directive('burndownChart', function () {
+	'use strict';
+	/*global google, googleReady*/
 
 	return {
 		restrict: 'E',

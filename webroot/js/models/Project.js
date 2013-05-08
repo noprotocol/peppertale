@@ -1,14 +1,16 @@
-app.factory('Project', function (ngRecord, Task) {
+app.factory('Project', function (ActiveRecord, Task) {
+	'use strict';
 
-	return ngRecord.extend({
+	return ActiveRecord.extend({
 
-		urlRoot: WEBROOT + 'api/projects',
+		$urlRoot: WEBROOT + 'api/projects',
 
-		constructor: function Project(properties) {
-			this.initialize.apply(this, arguments)
+		$constructor: function Project(properties) {
+			this.$initialize.apply(this, arguments);
 		},
 
-		parse: function (data) {
+		$parse: function (data) {
+			// Convert embedded tasks to Task objects
 			angular.forEach(data.tasks, function (task, i) {
 				data.tasks[i] = new Task(task);
 			});
